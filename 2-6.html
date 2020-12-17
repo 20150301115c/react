@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>2-6扩展运算符</title>
+    <script src="Library/react.development.js"></script>
+    <script src="Library/react-dom.development.js"></script>
+    <script src="Library/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+    function sum(a , b , c) {
+return a + b + c ;
+}
+let numbers = [1 , 2 , 3] ;
+const element =<h1>sum(...numbers)的值为：{sum(...numbers)} </h1>;
+ReactDOM.render(
+ element,
+ document.getElementById('example')
+);
+</script>
+</body>
+
+</html>

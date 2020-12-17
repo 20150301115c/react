@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>2-4解构赋值</title>
+    <script src="Library/react.development.js"></script>
+    <script src="Library/react-dom.development.js"></script>
+    <script src="Library/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="example"></div>
+    <script type="text/babel">
+let [a,b , c] = [1, 2,11223];
+const element =<h1>c的值为：{c} </h1>;
+ReactDOM.render(
+ element,
+ document.getElementById('example')
+);
+</script>
+
+
+
+    <div id="example1"></div>
+    <script type="text/babel">
+let age = 4;
+let person={name,age};
+const element =<h1>person的值为：{person.toString()} </h1>;
+ReactDOM.render(
+ element,
+ document.getElementById('example1')
+);
+</script>
+
+
+
+<div id="example2"></div>
+<script type="text/babel">
+/*let age = 4;
+let person={name,age};*/
+let person = {name:"Lily", age:4};
+let {name,age} = person;
+const element =<h1>person的值为：{name} </h1>;
+ReactDOM.render(
+ element,
+ document.getElementById('example2')
+);
+</script>
+
+
+
+<div id="example4"></div>
+<script type="text/babel">
+/*let age = 4;
+let person={name,age};*/
+//数组参数解构
+function sum([x, y]) {
+return x +y;
+}
+const element =<h1>person的值为{sum([3,4])},</h1>;
+ReactDOM.render(
+ element,
+ document.getElementById('example4')
+);
+</script>
+
+
+
+<div id="example5"></div>
+<script type="text/babel">
+function sum ({x, y}) {
+return x + y;
+}
+//sum ( { x : 1, y: 2}) ;
+const element =<h1>sum值为{sum ( { x : 9, y: 12}) },</h1>;
+ReactDOM.render(
+ element,
+ document.getElementById('example5')
+);
+</script>
+
+
+
+
+</body>
+
+</html>

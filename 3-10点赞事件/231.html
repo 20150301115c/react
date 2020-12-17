@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body,
+    textarea {
+        font-family: Courier;
+    }
+</style>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/bulid/react-dom.js"></script>
+    <script>
+        var TextAreaCounter = React.createClass({
+            _log: function (methodName, args) {
+                console.log(method, args);
+            },
+            componentWillUpdate: function () { this._log('componentWillUpdate', arguments); },
+            componentDidUpdate: function () { this._log('componentDidUpdate', arguments); },
+            componentWillMount: function () { this._log('componentWillMount', arguments); },
+            componentDidMount: function () { this._log('componentDidMount', arguments); },
+            componentWillUnmount: function () { this._log('componentWillUnmount', arguments); },
+            propTypes: {
+                defaultValue: React.PropTypes.string,
+            },
+
+            getInitialState: function () {
+                return {
+                    text: this.props.defaultValue,
+                };
+            },
+            _textChange: function (ev) {
+                this.setState({
+                    text: ev.target.value,
+                });
+            },
+            render: function () {
+                return React.DOM.div(null,
+                    React.DOM.textarea({
+                        value: this.state.text,
+                        onChange: this._textChange,
+                    }),
+                    React.DOM.h3(null, this.state.text.length)
+                );
+            }
+        });
+        var myTextAreaCounter = ReactDOM.render(
+            React.createElement(TextAreaCounter, {
+                defaultValue: "Bob",
+            }),
+            document.getElementById("app")
+        );
+
+    </script>
+</body>
+
+</html>

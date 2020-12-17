@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title> 3-9 组件function定义方式</title>
+    <script src="Library/react.development.js"></script>
+    <script src="Library/react-dom.development.js"></script>
+    <script src="Library/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+//使用函数定义了一个组件
+function HelloMessage(props) {
+return <h1>广东松山计算机系欢迎您！</h1>;
+}
+//为用户自定义的组件
+const element = <HelloMessage />;
+ReactDOM.render(
+element,
+document.getElementById('example')
+); //参数为组件名，显示组件DIV的ID
+</script>
+</body>
+
+</html>
